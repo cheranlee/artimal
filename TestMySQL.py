@@ -1,11 +1,15 @@
 import mysql.connector as mysql
 
 connection = mysql.connect(
-    
+    user='root',
+    password='',
+    database='test',
+    unix_socket='/tmp/mysql.sock'
 )
 
 cursor = connection.cursor()
 
+'''
 search_value = input("Enter search term: ")
 
 query = "SELECT QuestionId FROM Otter WHERE Question LIKE '%" + search_value + "%'"
@@ -30,7 +34,21 @@ cursor.execute(query1)
 
 results = cursor.fetchone()
 
-print(results[0])
+'''
+query = "SELECT MAX(QuestionId) FROM Otter"
+
+cursor.execute(query)
+result = cursor.fetchone()  
+
+print(result[0])
+
+cursor.reset()  
+
+prompt = "INSERT INTO Otter(Question, Answer) VALUES(%s, %s)"
+
+cursor.execute(prompt, ("What is the capital of France?", "Paris"))  
+
+connection.commit() #required to save changes to the database
 
 # Close the connection
 connection.close()  
