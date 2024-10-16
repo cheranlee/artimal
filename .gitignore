@@ -2,3 +2,4 @@
 myenv
 *.wav
 recordings
+.env
