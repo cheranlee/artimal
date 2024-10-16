@@ -1,16 +1,71 @@
+Sure! Below is the formatted guide that can be saved as a `.md` file (e.g., `README.md`).
 
-# Artimal
+```markdown
+# Artimal Setup Guide
 
 ## Steps to Run
 
+1. **Create a Virtual Environment:**
+
+   ```bash
+   python3 -m venv myenv  # Create virtual environment
+   ```
+
+2. **Activate the Virtual Environment:**
+
+   ```bash
+   source myenv/bin/activate  # Activate virtual environment
+   ```
+
+3. **Install Dependencies:**
+
+   ```bash
+   pip install -r requirements.txt  # Install required packages
+   ```
+
+4. **Run the Code:**
+
+   ```bash
+   python3 code_1.py  # Run the main script
+   ```
+
+---
+
+## Create a `.env` File in the Root Directory
+
+Add the following content to a `.env` file to securely store environment variables:
+
 ```bash
-python3 -m venv myenv # create virtual env
+MYSQL_HOST='put_host_name_here'
+MYSQL_PORT=port_num
+MYSQL_USER='admin'
+MYSQL_DATABASE='artimal'
+MYSQL_PASSWORD='password'
 
-source venv/bin/activate # activate virtual env
+OPENAI_API_KEY="open_ai_api_key"
+```
 
-pip install -r requirements.txt
+- Replace the placeholders:
+  - `put_host_name_here`: Your MySQL host.
+  - `port_num`: The port number for your MySQL server.
+  - `admin`: Your MySQL username.
+  - `artimal`: The database name.
+  - `password`: Your MySQL password.
+  - `openai_api_key`: Your OpenAI API key.
 
-python3 code_1.py
+---
 
-deactivate # decativate virtual env
+5. **Deactivate the Virtual Environment:**
+
+   After you're done, deactivate the virtual environment using:
+
+   ```bash
+   deactivate  # Exit virtual environment
+   ```
+
+---
+
+## Notes
+
+- Make sure you have the `.env` file in the root directory before running the application.
 ```
