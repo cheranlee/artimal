@@ -1,5 +1,5 @@
 .venv
 myenv
-#*.wav
+*.wav
 .env
 __pycache__
