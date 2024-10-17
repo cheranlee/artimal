@@ -1,5 +1,3 @@
-Sure! Below is the formatted guide that can be saved as a `.md` file (e.g., `README.md`).
-
 ```markdown
 # Artimal Setup Guide
 
@@ -21,12 +19,6 @@ Sure! Below is the formatted guide that can be saved as a `.md` file (e.g., `REA
 
    ```bash
    pip install -r requirements.txt  # Install required packages
-   ```
-
-4. **Run the Code:**
-
-   ```bash
-   python3 code_1.py  # Run the main script
    ```
 
 ---
@@ -54,6 +46,18 @@ OPENAI_API_KEY="open_ai_api_key"
   - `openai_api_key`: Your OpenAI API key.
 
 ---
+
+4. **Run the Code:**
+
+   ```bash
+   python3 main_otter.py  # Run the main script
+
+   #or
+
+   python3 main_macaque.py
+
+   ```
+
 
 5. **Deactivate the Virtual Environment:**
 

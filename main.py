@@ -119,7 +119,6 @@ def main():
                 sys.stdout.write(f"\rPlaying audio... {int(elapsed_time)}/10 seconds                                              ")
                 sys.stdout.flush()
             # 9/10 end -reb
-
             status = sd.wait() 
 
             # 9/10 start - reb
@@ -137,8 +136,6 @@ def main():
             # 9/10 end - reb
 
             # add to sql database 
-
-
             input_prompt = "INSERT INTO Otter(Question, Answer) VALUES(%s, %s)"
             cursor.execute(input_prompt, (prompt_message, reply_message))  
             connection.commit()
@@ -178,4 +175,3 @@ def main():
 
     print("EXIT PROGRAM")
 
-main() 
