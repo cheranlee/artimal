@@ -2,4 +2,7 @@
 from common import *
 
 animal = "Macaque"
-main(animal) 
+mainTable = "Macaque"
+safewordTable = ""
+
+main(animal, mainTable, safewordTable) 

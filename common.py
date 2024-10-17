@@ -47,7 +47,7 @@ def get_audio_reply(client, reply_message):
         ) as response: 
         response.stream_to_file("recordings/output/speech.wav")
 
-def main( animal ): 
+def main(animal, mainTable, safewordTable): 
 
     choice = ""
     # connect to openai 
@@ -134,11 +134,12 @@ def main( animal ):
 
         # Safe word table
     
-        # cursor.execute("SELECT Answer FROM Otter WHERE Question LIKE %s", (query, ))
+        # cursor.execute(f"SELECT Answer FROM {safewordTable} WHERE Question LIKE %s", (query, ))
         # result = cursor.fetchone() 
         # cursor.reset()  
-        # print(result) 
         # if result: 
+        #     sys.stdout.write(f"\r{animal}: {result[0]}                                                      \n")
+        #     sys.stdout.flush()
         #     get_audio_reply(client, result[0])
         #     filename = 'recordings/output/speech.wav'
         #     data, fs = sf.read(filename, dtype='float32')
@@ -147,7 +148,7 @@ def main( animal ):
         #     continue
 
         # Animal main table 
-        cursor.execute("SELECT Answer FROM Otter WHERE Question LIKE %s", (query, ))
+        cursor.execute(f"SELECT Answer FROM {mainTable} WHERE Question LIKE %s", (query, ))
         result = cursor.fetchone() 
         cursor.reset()  
 
@@ -177,7 +178,7 @@ def main( animal ):
         # 9/10 end - reb
 
         # add to sql database 
-        input_prompt = "INSERT INTO Otter(Question, Answer) VALUES(%s, %s)"
+        input_prompt = f"INSERT INTO {mainTable}(Question, Answer) VALUES(%s, %s)"
         cursor.execute(input_prompt, (prompt_message, reply_message))  
         connection.commit()
         cursor.reset()
