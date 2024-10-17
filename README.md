@@ -1,4 +1,3 @@
-```markdown
 # Artimal Setup Guide
 
 ## Steps to Run
@@ -20,32 +19,6 @@
    ```bash
    pip install -r requirements.txt  # Install required packages
    ```
-
----
-
-## Create a `.env` File in the Root Directory
-
-Add the following content to a `.env` file to securely store environment variables:
-
-```bash
-MYSQL_HOST='put_host_name_here'
-MYSQL_PORT=port_num
-MYSQL_USER='admin'
-MYSQL_DATABASE='artimal'
-MYSQL_PASSWORD='password'
-
-OPENAI_API_KEY="open_ai_api_key"
-```
-
-- Replace the placeholders:
-  - `put_host_name_here`: Your MySQL host.
-  - `port_num`: The port number for your MySQL server.
-  - `admin`: Your MySQL username.
-  - `artimal`: The database name.
-  - `password`: Your MySQL password.
-  - `openai_api_key`: Your OpenAI API key.
-
----
 
 4. **Run the Code:**
 
@@ -72,4 +45,29 @@ OPENAI_API_KEY="open_ai_api_key"
 ## Notes
 
 - Make sure you have the `.env` file in the root directory before running the application.
+
+---
+
+## Create a `.env` File in the Root Directory
+
+Add the following content to a `.env` file to securely store environment variables:
+
+```bash
+MYSQL_HOST='put_host_name_here'
+MYSQL_PORT=port_num
+MYSQL_USER='admin'
+MYSQL_DATABASE='artimal'
+MYSQL_PASSWORD='password'
+
+OPENAI_API_KEY="open_ai_api_key"
 ```
+
+- Replace the placeholders:
+  - `put_host_name_here`: Your MySQL host.
+  - `port_num`: The port number for your MySQL server.
+  - `admin`: Your MySQL username.
+  - `artimal`: The database name.
+  - `password`: Your MySQL password.
+  - `openai_api_key`: Your OpenAI API key.
+
+---
