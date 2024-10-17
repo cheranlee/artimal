@@ -1,5 +1,5 @@
 .venv
 myenv
 *.wav
-recordings
 .env
+__pycache__
