@@ -2,4 +2,3 @@
 myenv
 *.wav
 .env
-__pycache__
